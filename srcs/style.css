@@ -1,0 +1,209 @@
+/* Header Style */
+header
+{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: 100%;
+  background-color: #e3a2be;
+  padding: 0;
+  margin: 0;
+}
+
+#header_bar
+{
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 2px rgba(0,0,0,0.17);
+  display: grid;
+  grid-template-columns: auto auto;
+  min-width: 430px;
+  margin-right: 15px;
+}
+
+.logo
+{
+  height: 50px;
+  margin-left: 20px;
+  margin-right: -50px;
+}
+
+.div1
+{
+  text-decoration: none;
+}
+
+#header_text
+{
+  font-size: 40px;
+  color: #343434;
+}
+
+.button
+{
+  height: 30px;
+  background-color: #dedede;
+  padding: 5px 10px;
+  text-decoration: none;
+  color: #343434;
+  border:3px solid #dedede;
+  box-shadow: 0 2px 2px rgba(0,0,0,0.17);
+  margin-bottom: 10px;
+}
+
+.button:hover:enabled
+{
+  border-color:#7a7a7a;
+}
+
+.button:active
+{
+  background-color: #a4a4a4;
+}
+
+.button:disabled
+{
+  background-color: #e5e4e2;
+  border-color: #e5e4e2;
+  color: grey;
+}
+
+.button.wider
+{
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.div2
+{
+    justify-self: end;
+}
+
+/* End Header Style */
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+/* Main Body Style */
+
+body
+{
+  margin: 0;
+  padding: 0;
+  background-color: #343434;
+}
+
+section
+{
+  margin-top: 80px;
+  height: 500px;
+}
+
+/* Home Page Style */
+
+#home_page
+{
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: center;
+  align-items: center;
+  grid-column-gap: 30px;
+}
+
+.card
+{
+  height: 200px;
+  width: 200px;
+  background-color: #fac2c2;
+  box-shadow: 0 2px 2px rgba(0,0,0,0.17);
+  box-sizing: border-box;
+  border-radius: 50px;
+  border:10px solid #fac2c2;
+  text-align: center;
+  color: #474445;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.card:hover
+{
+    border-color: #454545;
+}
+
+.card:active
+{
+  border-color: #4f3c44;
+}
+
+/* Create User Page Style */
+
+#create
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#create_form
+{
+  height: 400px;
+  width: 500px;
+  background-color: #b5b5b5;
+  box-shadow: 0 2px 2px rgba(0,0,0,0.17);
+  text-align: center;
+  padding: 10px 20px 0px 20px;
+  box-sizing: border-box;
+}
+
+.textbox
+{
+  width: 80%;
+  font-size: 16px;
+  background-color: #b5b5b5;
+  outline: none;
+  border: 0px;
+  border-bottom: 2px solid #8e8e8e;
+  text-align: center;
+}
+
+.label
+{
+  margin-top: 5px;
+}
+
+.error
+{
+  margin: 0px;
+  color: #cc0000;
+  text-align: center;
+}
+
+/* End Main Body Style */
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+/* Footer Style */
+
+footer
+{
+  height: 50px;
+  position: fixed;
+  bottom:0%;
+  width:100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  color: #e3a2be;
+}
+
+.footer_text
+{
+  margin-right: 20px;
+}
+
+/* End Footer Style */
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
