@@ -53,7 +53,7 @@ header
   margin-bottom: 10px;
 }
 
-.button:hover:enabled
+.button:hover
 {
   border-color:#7a7a7a;
 }
@@ -150,6 +150,7 @@ section
 #create_form
 {
   height: 400px;
+  min-width: 400px;
   width: 500px;
   background-color: #b5b5b5;
   box-shadow: 0 2px 2px rgba(0,0,0,0.17);
@@ -162,7 +163,7 @@ section
 {
   width: 80%;
   font-size: 16px;
-  background-color: #b5b5b5;
+  background-color: #b5b5b5 !important;
   outline: none;
   border: 0px;
   border-bottom: 2px solid #8e8e8e;

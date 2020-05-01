@@ -1,7 +1,8 @@
 <?php
+  include 'authen.php';
   //validate information, if invalid, write error messages
   $username = $password = "";
-  $user_error = $pass_error = "";
+  $user_error = $pass_error = $invalid_login = "";
 
   if (isset($_POST['submit']))
   {
@@ -22,6 +23,15 @@
       $pass_error = "Password may include letters, numbers or .@#$%-_=+ characters only.";
     else if (strlen($password) < 5 || strlen($password) > 50)
       $pass_error = "Password must be between 5-50 characters.";
+
+    if ($user_error == "" && $pass_error == "")
+    {
+      if (authenticate($username, $password))
+        $invalid_login = "Yep, it's in";
+      else
+        $invalid_login = "Sorry, the username or password do not match out records.";
+
+    }
   }
 ?>
 
@@ -61,6 +71,14 @@
         </p>
       </div> <!-- Password -->
       <br />
+      <p id="invalid_login" class="error">
+        <?php
+        if ($invalid_login == "")
+          echo "&nbsp;";
+        else
+          echo $invalid_login;
+        ?>
+      </p>
       <div>
         <input id="submit" class="button" name="submit" type="submit" value="Sign Up" style="margin-top:80px" disabled>
       </div> <!-- Submit -->
