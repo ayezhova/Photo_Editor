@@ -1,5 +1,6 @@
 <?php
-  include 'authen.php';
+  include('srcs/header.php');
+  include('srcs/authen.php');
   //validate information, if invalid, write error messages
   $username = $password = "";
   $user_error = $pass_error = $invalid_login = "";
@@ -26,16 +27,17 @@
 
     if ($user_error == "" && $pass_error == "")
     {
-      if (authenticate($username, $password))
-        $invalid_login = "Yep, it's in";
+      $name = authenticate($username, $password);
+      if ($name != "") {
+        $_SESSION['user'] = $name;
+        header('Location: ./index.php');
+      }
       else
         $invalid_login = "Sorry, the username or password do not match out records.";
 
     }
   }
 ?>
-
-  <?php include('srcs/header.php'); ?>
 
   <section id="create">
     <form id="create_form" action="" method="post" autocomplete="off">

@@ -1,4 +1,6 @@
 <?php
+    include "srcs/create_user.php";
+
   //validate information, if invalid, write error messages
   $username = $password = $name = $email = "";
   $user_error = $pass_error = $name_error = $email_error = "";
@@ -40,7 +42,11 @@
       $email_error = "Email must be between 3-100 characters.";
 
     if ($name_error == "" && $email_error == "" && $user_error == "" && $pass_error == "")
+    {
+      //connect to database and save new account information
+      create_user($name, $email, $username, $password);
       header('Location: login.php');
+    }
   }
 ?>
 
@@ -142,6 +148,7 @@
         let password;
         let valid_pass = 0;
 
+        //validate user information after user enters it (after click away from input)
         name_input.addEventListener("focusout", function(event) {
           name = escapeHtml(name_input.value);
           if (name.length < 3 || name.length > 100)
@@ -220,6 +227,7 @@
 
         const check_button = function()
         {
+          //enable button if all information valid
           if (valid_user && valid_pass && valid_email && valid_name)
             document.getElementById("submit").disabled = false;
           else

@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!-- Header information, stylesheet include -->
 
 <html>
@@ -13,13 +14,23 @@
   </head>
   <body>
   <header>
-      <div id="header_bar">
-        <a href="/" class="div1">
-          <img src="asset/v2.png" alt="" class="logo">
-          <span id="header_text">Photo Candy</span>
-        </a>
-        <div class="div2">
-          <a href="login.php" class="button">Log In</a>
-        </div>
-      </div> <!-- Header_bar -->
-    </header>
+    <div id="header_bar">
+      <a href="./index.php" class="div1">
+        <img src="asset/v2.png" alt="" class="logo">
+        <span id="header_text">Photo Candy</span>
+      </a>
+      <div class="div2">
+        <?php
+        if (!isset($_SESSION['user']) || (isset($_SESSION['user']) && $_SESSION['user'] == ""))
+        {
+          echo '<a href="login.php" class="button">Log In</a>';
+        }
+        else
+        {
+
+          echo '<a href="srcs/logout.php">' . $_SESSION['user'] . '</a>';
+        }
+        ?>
+      </div>
+    </div> <!-- Header_bar -->
+  </header>

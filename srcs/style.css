@@ -20,7 +20,7 @@ header
   display: grid;
   grid-template-columns: auto auto;
   min-width: 430px;
-  margin-right: 15px;
+  /* margin-right: 15px; */
 }
 
 .logo
